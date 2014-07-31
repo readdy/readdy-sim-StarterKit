@@ -3,6 +3,7 @@ Glad you intend to use ReaDDy for your particle-based reaction-diffusion simulat
 This is a quick starting package that sets you up right away.
 
 Run a simulation right away:
+
 1) go into simulation folder
 >	cd sim
 
@@ -10,6 +11,7 @@ Run a simulation right away:
 >	./run.sh
 
 Look at the simulation
+
 1) download VMD:
 >	 http://www.ks.uiuc.edu/Research/vmd/
 
@@ -20,6 +22,7 @@ Look at the simulation
 
 
 Change the simulation parameters:
+
 You will find all simulation parameters in 
 > 	cd input
 
