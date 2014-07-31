@@ -8,6 +8,7 @@ Run a simulation right away:
 
 Look at the simulation
 >	download VMD : http://www.ks.uiuc.edu/Research/vmd/
+have a look:
 >	vmd -e output/out_traj.xml.VMD.tcl
 
 // The _bin_VMD-Visualizer automatically creates a vmd readable xyz trajectory from the readdy xml output and provides a VMD .tcl script to view it right away
