@@ -4,7 +4,7 @@ echo "start simulation..."
 
 
 
-PROGRAMPATH=../../_bin_simulator_BD/
+PROGRAMPATH=../../_bin_ReaDDy/
 PROGRAM=$PROGRAMPATH/ReaDDy.jar
 #CLASSPATH=./$PROGRAMPATH/lib/colt.jar:./$PROGRAMPATH/lib/statlab.jar:./$PROGRAMPATH/lib/ReaDDy.jar
 #echo $CLASSPATH
