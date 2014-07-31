@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	space dimension is nm = 10^-9 m
+	time dimension is s = s
+
+	D = x mum^2 s^-1 = 10^+6 nm^2 s^-1
+-->
+
+<param_particles version="1.1">
+	<!--^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+	<particle>		
+        <type>A</type>
+		<diffusionConstant>1e+6</diffusionConstant>		
+		<collisionRadiusMap>
+			<collisionRadius>
+				<partnerType>default</partnerType>
+				<radius>1</radius>
+			</collisionRadius>
+		</collisionRadiusMap>		
+		<reactionRadiusMap>
+			<reactionRadius>
+				<partnerType>default</partnerType>
+				<radius>1</radius>
+			</reactionRadius>
+		</reactionRadiusMap>
+	</particle>
+	<!--^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+	<particle>		
+        <type>B</type>
+		<diffusionConstant>0.5e+6</diffusionConstant>		
+		<collisionRadiusMap>
+			<collisionRadius>
+				<partnerType>default</partnerType>
+				<radius>2.5</radius>
+			</collisionRadius>
+		</collisionRadiusMap>		
+		<reactionRadiusMap>
+			<reactionRadius>
+				<partnerType>default</partnerType>
+				<radius>2.5</radius>
+			</reactionRadius>
+		</reactionRadiusMap>
+	</particle>
+	<!--^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+	<particle>		
+        <type>C</type>
+		<diffusionConstant>0.25e+6</diffusionConstant>		
+		<collisionRadiusMap>
+			<collisionRadius>
+				<partnerType>default</partnerType>
+				<radius>5</radius>
+			</collisionRadius>
+		</collisionRadiusMap>		
+		<reactionRadiusMap>
+			<reactionRadius>
+				<partnerType>default</partnerType>
+				<radius>5</radius>
+			</reactionRadius>
+		</reactionRadiusMap>
+	</particle>
+	<!--^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+	<particle>		
+        <type>D</type>
+		<diffusionConstant>0.1e+6</diffusionConstant>		
+		<collisionRadiusMap>
+			<collisionRadius>
+				<partnerType>default</partnerType>
+				<radius>10</radius>
+			</collisionRadius>
+		</collisionRadiusMap>		
+		<reactionRadiusMap>
+			<reactionRadius>
+				<partnerType>default</partnerType>
+				<radius>10</radius>
+			</reactionRadius>
+		</reactionRadiusMap>
+	</particle>
+	<!--^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+</param_particles>

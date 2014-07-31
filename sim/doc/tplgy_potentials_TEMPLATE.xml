@@ -1,0 +1,95 @@
+<tplgy_potentials version="1.1">
+	<!-- by J. Schoeneberg
+	
+		++++++++++++++++++++++++++++++++++++
+		Units:
+		
+		space units are nanometers
+	 	time units are seconds
+		force constant units are kJ/mol/s
+		
+		++++++++++++++++++++++++++++++++++++
+		subtypeChoices:
+		
+		membrane: potential is 0 on the volume surface, >0 everywhere else.
+		(e.g. particles on a sphere that is defined as membrane stay on the surface of the sphere)
+	
+		attractive: potential is 0 in the inside of the volume >0 everywhere else
+		(e.g. particles on a sphere that is defined as attractive are attracted to the inside of it and stay there)
+		
+		repulsive: potential is 0 on the outside of the volume >0 on the inside.
+		(e.g. particles on a sphere that is defined as repulsive are pushed out from the inside and stay on the outside)
+		
+		consider particleRadius:
+		if false, only the center of the particle matters for particle-geometry distance computation for potentials and the radius is ignored.
+		(e.g. attractive sphere: particles start to feel the potential when their center gets outside the sphere.)
+	
+		if false, the center+radius of the particle matters for particle-geometry distance computation for potentials.
+		(e.g. attractive sphere: particles start to feel the potential when center+radius gets outside the sphere)
+	
+		++++++++++++++++++++++++++++++++++++
+		affectedParticleTypeIds, affectedParticleIds:
+		List of integers:
+		e.g. [0,1,2,5]
+		or	
+		'all'
+	
+		++++++++++++++++++++++++++++++++++++
+		affectedParticleTypeIdPairs, affectedParticleIdPairs:
+		List of integer pairs:
+		e.g. [[1,2];[2,4]]
+		or
+		'all'
+	
+	-->
+	
+	
+	<!-- subtype choices: [ "membrane","attractive","repulsive"] -->
+	<pot 	name="myCube"
+			type="CUBE"
+			subtype="attractive" 
+			forceConst="10"
+			considerParticleRadius="false"
+			origin="[-50, -50, -50]"
+			extension="[100, 100, 100]"
+			affectedParticleTypeIds="all"
+			affectedParticleIds="" />
+			
+	
+	
+	<!-- subtype choices: [ "membrane","attractive","repulsive"] -->
+	<pot 	name="myDisk"
+			type="DISK"
+			subtype="attractive" 
+			forceConst="10"
+			considerParticleRadius="false"
+			origin="[0, 0, 0]"
+			normal="[0,0,1]"
+			radius="100."
+			affectedParticleTypeIds="all"
+			affectedParticleIds="" />
+
+	<!-- subtype choices: [ "membrane","attractive","repulsive"] -->
+	<pot 	name="mySphere"
+			type="SPHERE"
+			subtype="membrane" 
+			forceConst="10"
+			center="[0,0,0]"
+			radius="100"
+			considerParticleRadius="false"
+			affectedParticleTypeIds="all"
+			affectedParticleIds="" />		
+	
+	<!-- +++++++++++++++++++++++++++++++ ORDER 2 +++++++++++++++++++++++++++++++ -->
+	
+	<!-- subtype choices: [ "membrane","attractive","repulsive"] -->
+	<pot 	name="harmonic_particleRepulsion"
+			type="HARMONIC"
+			subtype="repulsive" 
+			forceConst="10" 
+			affectedParticleTypeIdPairs="all"
+			affectedParticleIdPairs="" />
+			
+			
+
+</tplgy_potentials>

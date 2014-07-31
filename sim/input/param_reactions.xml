@@ -1,0 +1,224 @@
+<param_reactions version="1.1">
+
+	<!-- 
+		Rates are given in 1/s and are microscopic reaction rates, i.e. unimolecular reaction rates.
+		
+		Example: bimolecular complex formation reaction A+B <-> C
+		
+		The forward reaction A+B -> C is a bimolecular reaction with a rate k_on_macro
+		This rate incorporates both the diffusional encounter and the reaction of the encounter complex to the products.
+		Since ReaDDy simulates the diffusion explicitly, k_on_macro has to be splitted in its diffusion and encounter to product
+		reaction components (k_diff & k_micro). See Erban and Chapman 2009 for a derivation of k_micro from k_on_macro.
+		This k_micro is then the value that goes in here. 
+		
+		The backward reaction C-> A+B is already a unimolecular reaction and its rate k_off can be used
+		directly as a parameter in ReaDDy.
+		
+		++++
+		
+		All reactions have forward and backward reaction rates. 
+		If you set one of them to 0, only the forward or backward reaction will be executed.
+		
+		++++
+		
+		Some reactions' backward reaction is the forward reaction of an other reaction.
+		If you e.g. specify a creation reaction, the backward reaction of the creation is 
+		automatically a decay.
+		If you specify a decay reaction, its backward reaction is automatically a creation.
+		
+		Here is a table that indicates that:
+		
+		forward							backward
+		                            	
+		0->x	creation				x->0	decay
+		0->x+y	doubleCreation			x+y->0	annihilation
+		x->y	typeConversion				|same|
+		x->xy	birth					xy->x	death
+		x->yz	fission					yz->x	fusion
+		xy->xz	enzymatic					|same|
+		wx->yz	doubleTypeConversion		|same|
+		
+		-->
+	
+
+<!-- ######################## particle related reactions ########################-->
+
+		<!--
+				<reaction> 
+					<name>creation_reaction</name> 
+					<type>creation</type>
+					<educts> 
+					</educts> 
+					<products>
+						<product 		type="particle">A</product>  
+					</products>
+					<k_forward>1e5</k_forward> 			
+					<k_backward>0</k_backward> 		
+				</reaction> 
+				-->
+
+				<reaction> 
+					<name>decay_reaction</name> 
+					<type>decay</type>
+					<educts> 
+						<educt 		type="particle">A</educt> 
+					</educts> 
+					<products> 
+					</products>
+					<k_forward>1e5</k_forward> 			
+					<k_backward>0</k_backward> 		
+				</reaction> 
+				
+				<!--				
+				<reaction> 
+					<name>doubleCreation_reaction</name> 
+					<type>doubleCreation</type>
+					<educts> 
+					</educts> 
+					<products> 
+						<product 		type="particle">A</product> 
+						<product 		type="particle">B</product> 
+					</products>
+					<k_forward>1e5</k_forward> 			
+					<k_backward>0</k_backward> 		
+				</reaction> 
+				
+				
+				<reaction> 
+					<name>annihilation_reaction</name> 
+					<type>annihilation</type>
+					<educts> 
+						<educt 		type="particle">A</educt> 
+						<educt 		type="particle">B</educt> 
+					</educts> 
+					<products> 
+					</products>
+					<k_forward>1e5</k_forward> 			
+					<k_backward>0</k_backward> 		
+				</reaction> 
+				
+				
+				<reaction> 
+					<name>typeConversion_reaction</name> 
+					<type>typeConversion</type>
+					<educts> 
+						<educt 		type="particle">A</educt> 
+					</educts> 
+					<products> 
+						<product 		type="particle">B</product> 
+					</products>
+					<k_forward>1e5</k_forward> 			
+					<k_backward>0</k_backward> 		
+				</reaction> 
+				
+				
+				<reaction> 
+					<name>birth_reaction</name> 
+					<type>birth</type>
+					<educts> 
+						<educt 		type="particle">A</educt> 
+					</educts> 
+					<products> 
+						<product 		type="particle">A</product> 
+						<product 		type="particle">B</product> 
+					</products>
+					<k_forward>1e5</k_forward> 			
+					<k_backward>0</k_backward> 		
+				</reaction>  
+				
+				
+				<reaction> 
+					<name>death_reaction</name> 
+					<type>death</type>
+					<educts> 
+						<educt 		type="particle">A</educt> 
+						<educt 		type="particle">B</educt> 
+					</educts> 
+					<products> 
+						<product 		type="particle">A</product> 
+					</products>
+					<k_forward>1e5</k_forward> 			
+					<k_backward>0</k_backward> 		
+				</reaction>  
+				
+				
+				<reaction> 
+					<name>fission_reaction</name> 
+					<type>fission</type>
+					<educts> 
+						<educt 		type="particle">A</educt> 
+					</educts> 
+					<products> 
+						<product 		type="particle">B</product> 
+						<product 		type="particle">C</product> 
+					</products>
+					<k_forward>1e5</k_forward> 			
+					<k_backward>0</k_backward> 		
+				</reaction>  
+				
+				
+				<reaction> 
+					<name>fusion_reaction</name> 
+					<type>fusion</type>
+					<educts> 
+						<educt 		type="particle">A</educt> 
+						<educt 		type="particle">B</educt> 
+					</educts> 
+					<products> 
+						<product 		type="particle">C</product> 
+					</products>
+					<k_forward>1e5</k_forward> 			
+					<k_backward>0</k_backward> 		
+				</reaction>  
+				
+				
+				<reaction> 
+					<name>enzymatic_reaction</name> 
+					<type>enzymatic</type>
+					<educts> 
+						<educt 		type="particle">A</educt> 
+						<educt 		type="particle">B</educt> 
+					</educts> 
+					<products> 
+						<product 		type="particle">A</product> 
+						<product 		type="particle">C</product> 
+					</products>
+					<k_forward>1e5</k_forward> 			
+					<k_backward>0</k_backward> 		
+				</reaction>  
+				
+				
+				<reaction> 
+					<name>doubleTypeConversion_reaction</name> 
+					<type>doubleTypeConversion</type>
+					<educts> 
+						<educt 		type="particle">A</educt> 
+						<educt 		type="particle">B</educt> 
+					</educts> 
+					<products> 
+						<product 		type="particle">C</product> 
+						<product 		type="particle">D</product> 
+					</products>
+					<k_forward>1e5</k_forward> 			
+					<k_backward>0</k_backward> 		
+				</reaction>  
+									-->
+
+<!-- ######################## group related reactions ########################-->
+				<!--
+				<reaction> 
+					<name>formDimer</name> 
+					<type>group</type> 
+					<educts> 
+						<educt 		type="particle">A</educt>
+						<educt 		type="particle">A</educt> 
+					</educts> 
+					<products> 
+						<product 	type="group">dimer</product> 
+					</products> 
+					<k_forward>1e5</k_forward> 			 
+					<k_backward>0</k_backward> 		
+				</reaction>
+					-->
+
+</param_reactions>
