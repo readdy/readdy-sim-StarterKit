@@ -15,6 +15,8 @@ Look at the simulation
 1) download VMD:
 >	 http://www.ks.uiuc.edu/Research/vmd/
 
+// if you are on a mac: open the .tcl script differently: Open VMD, click on 'File' in the upper left corner of the screen, click 'source' in the dropdown menu, and choose the StarterKitPath/sim/output/out_traj.xml.VMD.tcl to view it.
+
 2) have a look at your simulation trajectory:
 >	vmd -e output/out_traj.xml.VMD.tcl
 
