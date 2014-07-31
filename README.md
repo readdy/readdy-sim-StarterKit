@@ -8,6 +8,7 @@ Run a simulation right away:
 
 Look at the simulation
 >	download VMD : http://www.ks.uiuc.edu/Research/vmd/
+
 have a look:
 >	vmd -e output/out_traj.xml.VMD.tcl
 
