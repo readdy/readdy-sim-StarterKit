@@ -47,8 +47,8 @@
 	<!-- subtype choices: [ "membrane","attractive","repulsive"] -->
 	
 
-	<pot 	name="myCube"
-			type="CUBE"
+	<pot 	name="myBox"
+			type="BOX"
 			subtype="attractive" 
 			forceConst="10"
 			considerParticleRadius="false"
