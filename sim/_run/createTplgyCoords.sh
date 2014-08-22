@@ -7,9 +7,9 @@ echo "create tplgy coords..."
 
 
 
-PROGRAMPATH=../../_bin_tplgy_coords_creator/
+PROGRAMPATH=../../_bin_Tplgy-Generator/
 
-PROGRAM=$PROGRAMPATH/ReaDDy_TplgyCoordsCreator.jar
+PROGRAM=$PROGRAMPATH/ReaDDy-Topology-Generator.jar
 
 INPUTFOLDER=../input/
 OUTPUTFOLDER=$1
